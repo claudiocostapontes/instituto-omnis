@@ -113,21 +113,34 @@ body {
 }
 
 /* Navegação */
+
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem !important; /* Aumentado de 2rem para 4rem para esticar até as linhas amarelas */
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.20rem; /* Aumentado de 0.9rem para 1.20rem para letras maiores */
   transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
   color: var(--primary-green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem; 
+  transform: translateX(-60px) !important; /* O sinal de menos empurra para a ESQUERDA */
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem; 
+  transform: translateX(-5px); /* Número positivo empurra para a DIREITA */
 }
 
 /* Redes Sociais */

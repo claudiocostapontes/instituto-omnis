@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import SobreNosView from './views/SobreNosView.vue'
+import PsiquiatriaView from './views/PsiquiatriaView.vue' 
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +15,12 @@ const router = createRouter({
       path: '/sobre-nos',
       name: 'sobre',
       component: SobreNosView
+    },
+    // 2. Adicionamos a nova rota aqui
+    {
+      path: '/psiquiatria',
+      name: 'psiquiatria',
+      component: PsiquiatriaView
     }
   ]
 })
