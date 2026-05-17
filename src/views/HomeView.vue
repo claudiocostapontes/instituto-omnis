@@ -1,17 +1,51 @@
+<script setup>
+import { ref } from 'vue';
+
+// Declara a variável que controla o pop-up
+const showAppointmentModal = ref(false);
+</script>
+
 <template>
   <main class="hero-container">
     <div class="hero-content">
       <span class="subtitle">Atendimento Especializado</span>
-      <h1>Excelência e Acolhimento em Saúde Mental</h1>
-      <p>
-        Unimos o rigor científico à empatia para oferecer diagnósticos precisos
-        e tratamentos individualizados, colocando a sua qualidade de vida
-        sempre em primeiro lugar.
-      </p>
+      
+      <h1>Sua saúde mental tratada com excelência</h1>
+      <p>Oferecemos um espaço de acolhimento focado no seu bem-estar, unindo ciência e humanização para restaurar sua qualidade de vida.</p>
       
       <div class="cta-group">
-        <button class="btn btn-primary">Agendar Consulta</button>
-        <button class="btn btn-secondary">Conhecer o Instituto</button>
+        <button class="btn btn-primary" @click="showAppointmentModal = true">Agendar Consulta</button>
+        <button class="btn btn-secondary">Conheça o Instituto</button>
+      </div>
+    </div> 
+
+    <div v-if="showAppointmentModal" class="modal-overlay" @click.self="showAppointmentModal = false">
+      <div class="contact-modal appointment-modal">
+        <button class="close-btn" @click="showAppointmentModal = false">×</button>
+        
+        <div class="modal-header">
+          <img src="/pyha.png" alt="Instituto Omnis" class="modal-logo-img" />
+          <h2>Agende sua Consulta</h2>
+          <p>Escolha um canal para agendamentos ou informações.</p>
+        </div>
+
+        <div class="contact-grid">
+          <a href="https://wa.me/5561984080875" target="_blank" class="contact-card whatsapp">
+            <img src="/whatsapp.png" alt="WhatsApp" class="modal-icon-img" />
+            <div class="info">
+              <strong>Celular & WhatsApp</strong>
+              <span>(61) 9.8408-0875</span>
+            </div>
+          </a>
+
+          <a href="tel:+556135264600" class="contact-card phone">
+            <img src="/telefone-comercial.png" alt="Telefone Fixo" class="modal-icon-img" />
+            <div class="info">
+              <strong>Telefone Fixo</strong>
+              <span>(61) 3526-4600</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -24,18 +58,20 @@
 <style scoped>
 .hero-container {
   display: flex;
-  align-items: center; /* Mantém tudo centralizado verticalmente */
+  align-items: center; 
   justify-content: space-between;
-  /* O padding exato para a "linha azul" alinhar com o cabeçalho */
   padding: 0 max(5%, calc((100% - 1300px) / 2));
   background-color: #f4f7f6;
   min-height: calc(100vh - 160px);
 }
 
 .hero-content {
-  flex: 0 0 45%; /* Trava o texto na metade esquerda */
+  flex: 0 0 45%; 
   text-align: left;
   padding-right: 2rem;
+  /* Garante que o texto e os botões fiquem acima de qualquer imagem invisível */
+  position: relative;
+  z-index: 10; 
 }
 
 .subtitle {
@@ -104,23 +140,33 @@
 }
 
 /* =========================================
-   ÁREA DA IMAGEM (QUADRADO AMARELO)
+   ÁREA DA IMAGEM
    ========================================= */
 .hero-image-wrapper {
-  flex: 0 0 50%; /* Trava a área da imagem na metade direita */
+  flex: 0 0 50%; 
   display: flex;
-  justify-content: flex-end; /* Empurra a imagem toda para a direita */
+  justify-content: flex-end; 
   align-items: center;
 }
 
 .abstract-mind-img {
   width: 100%;
-  max-width: 650px; /* Largura máxima (limite do quadrado amarelo) */
-  height: 480px;    /* Altura da imagem */
+  max-width: 650px; 
+  height: 480px;    
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  margin: 0; /* Remove qualquer margem que estava empurrando a imagem para baixo */
+  margin: 0; 
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DESTE POP-UP
+   ========================================= */
+.modal-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
 /* Responsividade Mobile */
