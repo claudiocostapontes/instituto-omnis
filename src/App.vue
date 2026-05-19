@@ -140,8 +140,8 @@ const activeHeaderModal = ref(null);
           <h3>Localização</h3>
           <iframe 
             src="https://maps.google.com/maps?q=Edifício+Mix+Park+Sul,+SGAS+910+-+Brasília,+DF,+70390-100&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-            width="100%" 
-            height="150" 
+            width="85%" 
+            height="100" 
             style="border:0; border-radius: 8px;" 
             allowfullscreen
             loading="lazy" 
@@ -151,7 +151,7 @@ const activeHeaderModal = ref(null);
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Instituto Omnis de Psiquiatria CNPJ: 10.992.674/0001-73. Todos os direitos reservados. Responsável Técnico: Dr. Renato Brito de Resende | CRM/DF 10581</p>
+       <p>Instituto Omnis de Psiquiatria / CNPJ: 10.992.674/0001-73 / Todos os direitos reservados / Responsável Técnico: <strong style="font-weight: bold;">Dr. Renato Brito de Resende</strong> | CRM/DF 10581</p>
       </div>
     </footer>
   </div>
@@ -175,7 +175,7 @@ const activeHeaderModal = ref(null);
 .site-footer {
   background-color: #1a4321;
   color: #ffffff;
-  padding: 3rem 5% 1rem;
+  padding: 1.5rem 5% 1.5rem; /* <-- cima, laterais, embaixo */
   font-family: 'Montserrat', sans-serif;
   margin-top: auto;
 }
